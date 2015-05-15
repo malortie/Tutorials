@@ -9,8 +9,8 @@ This tutorial is preliminarily intended for people with limited experience in Vi
 In this case, readers should refer to external C++ references for memory refresh and practice before taking onto further tutorials.
 
 ##Objectives
-* **Familiarize with user interface**
-* **Create, build, execute project**
+* *Familiarize with user interface*
+* *Create, build, execute project*
 
 ##Table of content
 1. [A quick look at VS's user interface](#step-1-a-quick-look-at-vss-user-interface)
