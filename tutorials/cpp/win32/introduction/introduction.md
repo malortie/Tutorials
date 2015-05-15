@@ -13,10 +13,10 @@ In this case, readers should refer to external C++ references for memory refresh
 * **Create, build, execute project**
 
 ##Table of content
-1. [A quick look at VS's user interface](https://github.com/malortie/Tutorials/wiki/Win32-API---Introduction#step-1-a-quick-look-at-vss-user-interface)
-2. [Creating the project](https://github.com/malortie/Tutorials/wiki/Win32-API---Introduction#step-2-creating-the-project)
-3. [Building the solution](https://github.com/malortie/Tutorials/wiki/Win32-API---Introduction#step-3-building-the-solution)
-4. [Launching from Visual Studio](https://github.com/malortie/Tutorials/wiki/Win32-API---Introduction#step-4-launching-from-visual-studio)
+1. [A quick look at VS's user interface](#step-1-a-quick-look-at-vss-user-interface)
+2. [Creating the project](#step-2-creating-the-project)
+3. [Building the solution](#step-3-building-the-solution)
+4. [Launching from Visual Studio](#step-4-launching-from-visual-studio)
 
 --
 
