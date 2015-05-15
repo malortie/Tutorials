@@ -26,7 +26,7 @@ Launch [Visual Studio 2013](https://www.visualstudio.com/en-us/downloads/downloa
 
 ***Note***: If you are logged as a local user/guest or if you do not have a [Microsoft account](http://en.wikipedia.org/wiki/Microsoft_account), you will be prompted to [create one](https://login.live.com/). This step is **optional**.
 
-![](tutorials/cpp/win32/introduction/images/visual-studio-introduction-2.png)
+![](images/visual-studio-introduction-2.png)
 
 |ID|Name|Details|
 |:--:|:--|:--|
@@ -43,7 +43,7 @@ To create a project, click on **New Project...**
 
 --
 
-![](tutorials/cpp/win32/introduction/images/visual-studio.png)
+![](images/visual-studio.png)
 
 --
 
@@ -51,7 +51,7 @@ You will be asked to select what type of project to create, in this tutorial, we
 
 To create a Win32 C++ application, in the window, select to **Visual C++** **→** **Win32** **→** **Win32 Project**
 
-![](tutorials/cpp/win32/introduction/images/new-project.png)
+![](images/new-project.png)
 
 
 --
@@ -64,7 +64,7 @@ In the **Solution name** field, rename **Win32Project1** to **win32-tutorials**.
 Once the proper changes are done, click **OK** to start up the application wizard.
 
 
-![](tutorials/cpp/win32/introduction/images/new-project-2.png)
+![](images/new-project-2.png)
 
 --
 
@@ -76,7 +76,7 @@ I will not explain or describe too much in depth, as these will be covered later
 
 For now, simply click **Next**.
 
-![](tutorials/cpp/win32/introduction/images/win32-app-wizard.png)
+![](images/win32-app-wizard.png)
 
 --
 
@@ -87,7 +87,7 @@ By default, when you choose to create a **Win32 project**, the selected option w
 Click on **Finish** to both complete and close project configuration wizard.
 
 
-![](tutorials/cpp/win32/introduction/images/win32-app-wizard-2.png)
+![](images/win32-app-wizard-2.png)
 
 --
 
@@ -95,7 +95,7 @@ Once code generation from Win32 template samples is done, your main [IDE](http:/
 
 --
 
-![](tutorials/cpp/win32/introduction/images/visual-studio-introduction.png)
+![](images/visual-studio-introduction.png)
 
 -
 
@@ -121,11 +121,11 @@ Very often, programmers may want to use shortcuts to avoid navigation through me
 
 **Build Solution** can be done as well by pressing shortcut key **F7**.
 
-![](tutorials/cpp/win32/introduction/images/menu-build.png)
+![](images/menu-build.png)
 
 --
 
-![](tutorials/cpp/win32/introduction/images/build-solution.png)
+![](images/build-solution.png)
 
 ####Using the solution explorer
 
@@ -135,7 +135,7 @@ From the **Solution Explorer**, right-click on the solution, **win32-tutorials**
 
 ***Note***:  To build the entire solution will build all projects associated to it. If you wish to on;y build a single project, then rick click on the project, **introduction** in this case, and select **build**.
 
-![](tutorials/cpp/win32/introduction/images/build-rmb.png)
+![](images/build-rmb.png)
 
 --
 
@@ -143,7 +143,7 @@ By default, once a build has started, Visual Studio will automaticaly switch to 
 
 Assuming that no code modification was made, the build should be successful.
 
-![](tutorials/cpp/win32/introduction/images/build-output.png)
+![](images/build-output.png)
 
 --
 
@@ -155,7 +155,7 @@ This is a way for launch the application in **Debug Mode**. By default, **Debug 
 
 During development, it is often a good practice to launch in **Debug Mode**.
 
-![](tutorials/cpp/win32/introduction/images/ribbon.png)
+![](images/ribbon.png)
 
 --
 
@@ -176,4 +176,4 @@ There are more than these, but I will not list them here, as I will describe a p
 
 As for the **Win32 C++ application**, The result should look like this:
 
-![](tutorials/cpp/win32/introduction/images/window.PNG)
+![](images/window.PNG)
