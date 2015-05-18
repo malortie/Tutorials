@@ -14,7 +14,7 @@ The purpose of this article is to take a look at some of the most [influential t
 
 ---
 
-##Table of content
+##Table of contents
 
 * [Origins](#origins)
 * [Notation](#notation)
