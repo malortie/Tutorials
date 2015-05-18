@@ -40,20 +40,22 @@ For a quick refresh, here is a list of [fundamental types](http://en.cppreferenc
 
 ---
 
-`bool`
-`char`
-`signed char`
-`unsigned char`
-`short`
-`signed short`
-`unsigned short`
-`int signed int`
-`unsigned int`
-`long`
-`signed long`
-`unsigned long`
-`float`
-`double`
+```cpp
+bool
+char
+signed char
+unsigned char
+short
+signed short
+unsigned short
+int signed int
+unsigned int
+long
+signed long
+unsigned long
+float
+double
+```
 
 ---
 
@@ -64,7 +66,7 @@ The hungarian notation can be applied by prefixing the name of each variable.
 Here is a list of defined convention for literals for prefixes. This is **not** a complete table, as it  only essential concepts are covered to ease understanding. For a more complete table, readers should refer to [this page](http://web.mst.edu/~cpp/common/hungarian.html).
 
 |Prefix|Type|
-|:-|:-|
+|:--|:--|
 |`b`| [boolean](http://en.wikipedia.org/wiki/Boolean_data_type)/[byte](http://en.wikipedia.org/wiki/Byte)|
 |`c`, `ch`|[character](http://en.wikipedia.org/wiki/Character_%28computing%29)|
 |`str`, `sz`| [null terminated string](http://en.wikipedia.org/wiki/Null-terminated_string)|
@@ -83,7 +85,7 @@ Here is a list of defined convention for literals for prefixes. This is **not** 
 These prefix predecessors, most commonly called pre-prefixes are mostly used to give a clue of the general characteristics whose associated variable have in the source code, such as: [pointer](http://en.wikipedia.org/wiki/Pointer_%28computer_programming%29), [reference](http://en.wikipedia.org/wiki/Reference_%28computer_science%29), [scope](http://en.wikipedia.org/wiki/Scope_%28computer_science%29), [capacity](http://en.wikipedia.org/wiki/Dynamic_array#Bounded-size_dynamic_arrays_and_capacity).
 
 |Pre-prefix|Description|
-|:-|:-|
+|:--|:--|
 |`k`|a constant or [immutable](http://en.wikipedia.org/wiki/Immutable_object) variable.|
 |`u`|[unsigned](http://en.wikipedia.org/wiki/Signedness) variable.|
 |`p`|A pointer to a variable.|
@@ -175,7 +177,7 @@ For more advantages & disadvantages, readers should refer to this [page](http://
 
 ##Links
 
-|Reference|Link
-|:-|:-|
-|Advantages & Disadvantages|[Wikipedia](http://en.wikipedia.org/wiki/Hungarian_notation)|
+|Reference|Link|
+|:--|:--|
+|Advantages \& Disadvantages|[Wikipedia](http://en.wikipedia.org/wiki/Hungarian_notation)|
 |Pre-prefixes|[web.mst.edu](http://web.mst.edu/~cpp/common/hungarian.html)|
