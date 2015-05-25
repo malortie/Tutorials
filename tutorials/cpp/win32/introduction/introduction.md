@@ -163,11 +163,11 @@ Once debugging has started, it is possible to see the main **dependencies** in t
 
 In a POSIX, or unix environment, these modules are equivalent to [shared libraries](http://en.wikipedia.org/wiki/Library_%28computing%29#Shared_libraries), except they have **\.so** as their extension.
 
-Since this is a simple **Win32** C++ application,  only the base modules are loaded, such as 
+Since this is a simple **Win32** C++ application,  only the base modules are loaded, such as
 
-* **combase.dll**, 
-* **kernel32.dll**, 
-* **user32.dll**, 
+* **combase.dll**,
+* **kernel32.dll**,
+* **user32.dll**,
 * **msvcr120d.dll**  
 
 There are more than these, but I will not list them here, as I will describe a part of their content more in depth in future tutorials.
@@ -177,3 +177,5 @@ There are more than these, but I will not list them here, as I will describe a p
 As for the **Win32 C++ application**, The result should look like this:
 
 ![](images/window.PNG)
+
+[Index](#../../index.md) | [Next](../windows-and-messages/windows-and-messages.md)
