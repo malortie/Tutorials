@@ -360,7 +360,7 @@ LRESULT WINAPI DispatchMessage(
 
 This function, `DispatchMessage`, is used to dispatch messages to a window procedure. In this case, the window procedure is represented by attribute `lpfnWndProc` from `WNDCLASSEX`, WndProc.
 
-##Message & Event callback
+##The window procedure
 
 This is the window procedure, which is called when a particuliar event is sent this window. To begin with, let us have a look at the function's declaration and parameters.
 
