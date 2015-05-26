@@ -124,7 +124,6 @@ UNREFERENCED_PARAMETER(lpCmdLine);
 
 _UNREFERENCED_PARAMETER_ is a simple [macro](http://en.wikipedia.org/wiki/Macro_(computer_science)) to prevent the [compiler](http://en.wikipedia.org/wiki/Compiler) from generating warnings, due to [unused variables](http://en.wikipedia.org/wiki/Unreferenced_variable). Since an application does not need to specify [command-line arguments](http://en.wikipedia.org/wiki/Command-line_interface#Arguments) (_lpCmdLine_) or ways to show the window (_nCmdShow_), these variables may or not be used, thus, unreferenced, which leads to a minor/harmless memory waste.
 
----
 
 The next two lines, are simple [declarations](http://en.wikipedia.org/wiki/Declaration_(computer_programming)). Their use will be explained later throughout this tutorial.
 
@@ -132,8 +131,6 @@ The next two lines, are simple [declarations](http://en.wikipedia.org/wiki/Decla
 MSG msg;
 HACCEL hAccelTable;
 ```
-
----
 
 Always in _WinMain_, these next three functions.
 
@@ -147,8 +144,6 @@ MyRegisterClass(hInstance);
 
 _MyRegisterClass_ is a template defined function that registers the class of the application. We will cover this function at the next step.
 
----
-
 As for _InitInstance_, this template defined  function is simply used to create and initialize the window.
 
 ```c
@@ -158,15 +153,11 @@ if (!InitInstance (hInstance, nCmdShow))
 }
 ```
 
----
-
 The function [LoadAccelerators](https://msdn.microsoft.com/en-us/library/windows/desktop/ms646370(v=vs.85).aspx) is used to retrieve a [keyboard accelerator](https://msdn.microsoft.com/en-us/library/windows/desktop/ms645526(v=vs.85).aspx) from a resource file. I will not describe it's use here, as it will be covered in future tutorials.
 
 ```c
 hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_INTRODUCTION));
 ```
-
----
 
 Finally, [the message loop](http://en.wikipedia.org/wiki/Message_loop_in_Microsoft_Windows).
 
@@ -185,8 +176,6 @@ return (int) msg.wParam;
 ```
 
 The message loop is responsible for dispatching messages from the message queue to the appropriate window, as Win32 API uses an [event-driven](http://en.wikipedia.org/wiki/Event-driven_programming) architecture. The application's [exit code](http://en.wikipedia.org/wiki/Exit_status) is stored in a structure [MSG](https://msdn.microsoft.com/en-us/library/windows/desktop/ms644958(v=vs.85).aspx) and returned.
-
----
 
 #Window initialization
 
@@ -642,11 +631,9 @@ case IDM_EXIT:
   break;
 ```
 
----
-
 ###WM_PAINT
 
-The _WM_PAINT_ identifier is used to describe the paint event. This event occurs everytime a window is redrawn. The function [BeginPaint](https://msdn.microsoft.com/en-us/library/windows/desktop/dd183362(v=vs.85).aspx) and [EndPaint](https://msdn.microsoft.com/en-us/library/windows/desktop/dd162598(v=vs.85).aspx) are used to specify both start and end of drawing process. On return, all the drawing that was done will be sent to screen.
+The [WM_PAINT](https://msdn.microsoft.com/en-us/library/windows/desktop/dd145213%28v=vs.85%29.aspx) command is used to describe the paint event. This event occurs everytime a window is redrawn. The function [BeginPaint](https://msdn.microsoft.com/en-us/library/windows/desktop/dd183362(v=vs.85).aspx) and [EndPaint](https://msdn.microsoft.com/en-us/library/windows/desktop/dd162598(v=vs.85).aspx) are used to specify both start and end of drawing process. On return, all the drawing that was done will be sent to screen.
 
 ```c
 case WM_PAINT:
