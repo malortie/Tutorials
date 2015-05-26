@@ -1,6 +1,7 @@
 # Tutorials
 
-Repository for various development related tutorials  
+Repository for various development related tutorials
+
 [Link to Wiki](https://github.com/malortie/Tutorials/wiki).
 
 * [Tutorials](#tutorials)
