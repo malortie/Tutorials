@@ -5,7 +5,7 @@ Repository for various development related tutorials
 
 * [Tutorials](#tutorials)
 * [Special Thanks](#special-thanks)
-* [Licence](#gnu-lesser-general-public-license)
+* [License](#gnu-lesser-general-public-license)
 
 #Special Thanks
 
