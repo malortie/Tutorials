@@ -131,6 +131,8 @@ The next two lines, are simple [declarations](http://en.wikipedia.org/wiki/Decla
 MSG msg;
 HACCEL hAccelTable;
 ```
+  
+  
 
 Always in _WinMain_, these next three functions.
 
@@ -243,35 +245,33 @@ typedef struct tagWNDCLASSEXW {
 
 |Name|Description|
 |:--|:--|
-|`cbSize`|The size in bytes of `WNDCLASSEX`|
-|`style`|The style of the window|
-|`lpfnWndProc`|A pointer to a WNDPROC callback to use as a message listener|
-|`cbClsExtra`|A set of additional flag values|
-|`cbWndExtra`|A set of additional flag values|
-|`hInstance`|A handle to the current application instance|
-|`hIcon`|A handle to an icon|
-|`hCursor`|A handle to a cursor|
-|`hbrBackground`|A handle to a brush color|
-|`lpszMenuName`|The Menu name|
-|`lpszClassName`|This window's class name|
+|_cbSize_|The size in bytes of _WNDCLASSEX_|
+|_style_|The style of the window|
+|_lpfnWndProc_|A pointer to a WNDPROC callback to use as a message listener|
+|_cbClsExtra_|A set of additional flag values|
+|_cbWndExtra_|A set of additional flag values|
+|_hInstance_|A handle to the current application instance|
+|_hIcon_|A handle to an icon|
+|_hCursor_|A handle to a cursor|
+|_hbrBackground_|A handle to a brush color|
+|_lpszMenuName_|The Menu name|
+|_lpszClassName_|This window's class name|
 
----
 
-> ***Reminder***
->
-> Windows Data types
->
-> |Name|Definition|
-> |:--|:--|
-> |LPSTR|`typedef char* LPSTR`|
-> |LPCSTR|`typedef const char* LPCSTR`|
-> |LPWSTR|`typedef wchar_t* LPWSTR`|
-> |LPCWSTR|`typedef const wchar_t* LPCWSTR`|
-> |PVOID|`typedef void* PVOID`|
-> |HANDLE|`typedef PVOID HANDLE`|
-> |HINSTANCE|`typedef HANDLE HINSTANCE`|
->
->
+**Reminder**
+
+
+Windows Data types
+
+|Name|Definition|
+|:--|:--|
+|LPSTR|typedef char* LPSTR|
+|LPCSTR|typedef const char* LPCSTR|
+|LPWSTR|typedef wchar_t* LPWSTR|
+|LPCWSTR|typedef const wchar_t* LPCWSTR|
+|PVOID|typedef void* PVOID|
+|HANDLE|typedef PVOID HANDLE|
+|HINSTANCE|typedef HANDLE HINSTANCE|
 
 ###RegisterClassEx
 
