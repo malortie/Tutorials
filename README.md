@@ -1,7 +1,15 @@
 # Tutorials
-Repository for various development related tutorials
 
+Repository for various development related tutorials  
 [Link to Wiki](https://github.com/malortie/Tutorials/wiki).
+
+* [Tutorials](#tutorials)
+* [Special Thanks](#special-thanks)
+* [Licence](#gnu-lesser-general-public-license)
+
+#Special Thanks
+
+* [draw.io](https://www.draw.io/) - Online diagram software
 
 #GNU LESSER GENERAL PUBLIC LICENSE
 
@@ -71,3 +79,7 @@ The Free Software Foundation may publish revised and/or new versions of the GNU 
 Each version is given a distinguishing version number. If the Library as you received it specifies that a certain numbered version of the GNU Lesser General Public License “or any later version” applies to it, you have the option of following the terms and conditions either of that published version or of any later version published by the Free Software Foundation. If the Library as you received it does not specify a version number of the GNU Lesser General Public License, you may choose any version of the GNU Lesser General Public License ever published by the Free Software Foundation.
 
 If the Library as you received it specifies that a proxy can decide whether future versions of the GNU Lesser General Public License shall apply, that proxy's public statement of acceptance of any version is permanent authorization for you to choose that version for the Library.
+
+---
+
+[Back to top](#tutorials)
