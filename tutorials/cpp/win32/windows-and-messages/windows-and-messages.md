@@ -2,7 +2,7 @@
 
 ##Purpose
 
-The purpose of this tutorial is to take a deeper look at the `WinMain` function in order to understand how structured a **Win32** application is. By the end of this tutorial, readers should be able to understand the concepts of message queues, window registration & creation, as well as the base of message loop and how all these operate to make an application work.
+The purpose of this tutorial is to take a deeper look at the _WinMain_ function in order to understand how structured a **Win32** application is. By the end of this tutorial, readers should be able to understand the concepts of message queues, window registration & creation, as well as the base of message loop and how all these operate to make an application work.
 
 ##Intended audience
 
@@ -55,21 +55,21 @@ int APIENTRY _tWinMain(
 );
 ```
 
-The first parameter, `hInstance`, represents the actual [instance](http://en.wikipedia.org/wiki/Instance_%28computer_science%29) of an application.  
+The first parameter, _hInstance_, represents the actual [instance](http://en.wikipedia.org/wiki/Instance_%28computer_science%29) of an application.  
 
-The second paramter, `hPrevInstance`, is a handle to a previous [instance](http://en.wikipedia.org/wiki/Instance_%28computer_science%29), (such instance only exists if there is an already running application of the same application).  
+The second paramter, _hPrevInstance_, is a handle to a previous [instance](http://en.wikipedia.org/wiki/Instance_%28computer_science%29), (such instance only exists if there is an already running application of the same application).  
 
-Third parameter, `lpCmdLine`, represents the [command-line](http://en.wikipedia.org/wiki/Command-line_interface) [arguments](http://en.wikipedia.org/wiki/Command-line_interface#Arguments).  
+Third parameter, _lpCmdLine_, represents the [command-line](http://en.wikipedia.org/wiki/Command-line_interface) [arguments](http://en.wikipedia.org/wiki/Command-line_interface#Arguments).  
 
-Finally,`nCmdShow` is a value that tells how the window should be displayed. For example, if the the display is set to be minimized, this value will be 2. If the window needs to show as maximized, this value will be 3, etc.
+Finally, _nCmdShow_ is a value that tells how the window should be displayed. For example, if the the display is set to be minimized, this value will be 2. If the window needs to show as maximized, this value will be 3, etc.
 
-Here is a schematic that demonstrates the main differences between `hInstance` and `hPrevInstance`.  
+Here is a schematic that demonstrates the main differences between _hInstance_ and _hPrevInstance_.  
 
 ![](images/win-main.png)
 
 ##Definition
 
-Then, comes the definition of `WinMain`.
+Then, comes the definition of _WinMain_.
 
 ```c
 
@@ -113,7 +113,7 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 
 ```
 
-I believe you are currently asking yourself, "Should I have to memorize all this?", "Is it the hello-world program at it's simplest form?". Simply calm down. This really is not the minimalist hello-world program. By default, when you choose to start from a **Win32** application **_template_**, it will create various resources such as dialogs, and string tables.
+I believe you are currently asking yourself, "Should I have to memorize all this?", "Is it the hello-world program at it's simplest form?". Simply calm down. This really is not the minimalist hello-world program. By default, when you choose to start from a Win32 application template, it will create various resources such as dialogs, and string tables.
 
 Let us begin with the two first lines.
 
@@ -122,7 +122,7 @@ UNREFERENCED_PARAMETER(hPrevInstance);
 UNREFERENCED_PARAMETER(lpCmdLine);
 ```
 
-`UNREFERENCED_PARAMETER` is a simple [macro](http://en.wikipedia.org/wiki/Macro_(computer_science)) to prevent the [compiler](http://en.wikipedia.org/wiki/Compiler) from generating warnings, due to [unused variables](http://en.wikipedia.org/wiki/Unreferenced_variable). Since an application does not need to specify [command-line arguments](http://en.wikipedia.org/wiki/Command-line_interface#Arguments) (`lpCmdLine`) or ways to show the window (`nCmdShow`), these variables may or not be used, thus, unreferenced, which leads to a minor/harmless memory waste.
+_UNREFERENCED_PARAMETER_ is a simple [macro](http://en.wikipedia.org/wiki/Macro_(computer_science)) to prevent the [compiler](http://en.wikipedia.org/wiki/Compiler) from generating warnings, due to [unused variables](http://en.wikipedia.org/wiki/Unreferenced_variable). Since an application does not need to specify [command-line arguments](http://en.wikipedia.org/wiki/Command-line_interface#Arguments) (_lpCmdLine_) or ways to show the window (_nCmdShow_), these variables may or not be used, thus, unreferenced, which leads to a minor/harmless memory waste.
 
 ---
 
@@ -135,7 +135,7 @@ HACCEL hAccelTable;
 
 ---
 
-Always in `WinMain`, these next three functions.
+Always in _WinMain_, these next three functions.
 
 ```c
 LoadString(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
@@ -143,13 +143,13 @@ LoadString(hInstance, IDC_INTRODUCTION, szWindowClass, MAX_LOADSTRING);
 MyRegisterClass(hInstance);
 ```
 
-[LoadString](https://msdn.microsoft.com/en-ca/library/windows/desktop/ms647486%28v=vs.85%29.aspx) is a function used to retrieve a string [resource](http://en.wikipedia.org/wiki/Resource_(computing)) from a specified instance. A [string](http://en.wikipedia.org/wiki/String_%28computer_science%29) [resource](http://en.wikipedia.org/wiki/Resource_(computing)) can represent language translation/window title/message box labels, etc. Once retrieved, the [string](http://en.wikipedia.org/wiki/String_%28computer_science%29) is copied to a destination buffer, `szTitle` and `szWindowClass` in this case.
+[LoadString](https://msdn.microsoft.com/en-ca/library/windows/desktop/ms647486%28v=vs.85%29.aspx) is a function used to retrieve a string [resource](http://en.wikipedia.org/wiki/Resource_(computing)) from a specified instance. A [string](http://en.wikipedia.org/wiki/String_%28computer_science%29) [resource](http://en.wikipedia.org/wiki/Resource_(computing)) can represent language translation/window title/message box labels, etc. Once retrieved, the [string](http://en.wikipedia.org/wiki/String_%28computer_science%29) is copied to a destination buffer, _szTitle_ and _szWindowClass_ in this case.
 
-`MyRegisterClass` is a **_template defined_** function that registers the class of the application. We will cover this function at the next step.
+_MyRegisterClass_ is a template defined function that registers the class of the application. We will cover this function at the next step.
 
 ---
 
-As for `InitInstance`, this **_template defined_** function is simply used to create and initialize the window.
+As for _InitInstance_, this template defined  function is simply used to create and initialize the window.
 
 ```c
 if (!InitInstance (hInstance, nCmdShow))
@@ -184,7 +184,7 @@ return (int) msg.wParam;
 
 ```
 
-The message loop is responsible for dispatching messages from the message queue to the appropriate window, as **Win32** API uses an [event-driven](http://en.wikipedia.org/wiki/Event-driven_programming) architecture. The application's [exit code](http://en.wikipedia.org/wiki/Exit_status) is stored in a structure [MSG](https://msdn.microsoft.com/en-us/library/windows/desktop/ms644958(v=vs.85).aspx) and returned.
+The message loop is responsible for dispatching messages from the message queue to the appropriate window, as Win32 API uses an [event-driven](http://en.wikipedia.org/wiki/Event-driven_programming) architecture. The application's [exit code](http://en.wikipedia.org/wiki/Exit_status) is stored in a structure [MSG](https://msdn.microsoft.com/en-us/library/windows/desktop/ms644958(v=vs.85).aspx) and returned.
 
 ---
 
@@ -193,7 +193,7 @@ The message loop is responsible for dispatching messages from the message queue 
 ##Window registration
 
 
-Before a window can be created, it needs to be registered in order to be identified during [run time](http://en.wikipedia.org/wiki/Run_time_(program_lifecycle_phase)) by messages and events. In order to understand the registration process, let's head to `MyRegisterClass` definition.
+Before a window can be created, it needs to be registered in order to be identified during [run time](http://en.wikipedia.org/wiki/Run_time_(program_lifecycle_phase)) by messages and events. In order to understand the registration process, let's head to _MyRegisterClass_ definition.
 
 
 ```c
@@ -295,15 +295,15 @@ return RegisterClassEx(&wcex);
 
 #####Reasons why RegisterClassEx would not work
 
-* `cbSize` is not specified or improperly initialized. The recommended way is to set `cbSize` to `sizeof(WNDCLASSEX)`.
-* `lpszClassName` is already registered, and thus is causing a failure to avoid duplicate classes.
-* `hInstance` is not a valid application instance, or is uninitialized.
-* `hbrBackground` is an invalid [HANDLE](https://msdn.microsoft.com/en-us/library/windows/desktop/aa383751%28v=vs.85%29.aspx#HANDLE) value. The default value is `COLOR_WINDOW+1`.
+* _cbSize_ is not specified or improperly initialized. The recommended way is to set _cbSize_ to _sizeof(WNDCLASSEX)_.
+* _lpszClassName_ is already registered, and thus is causing a failure to avoid duplicate classes.
+* _hInstance_ is not a valid application instance, or is uninitialized.
+* _hbrBackground_ is an invalid [HANDLE](https://msdn.microsoft.com/en-us/library/windows/desktop/aa383751%28v=vs.85%29.aspx#HANDLE) value. The default value is _COLOR_WINDOW+1_.
 
 
 ##Window creation
 
-After the window registration, the window needs to be created. Let us proceed to the function `InitInstance`.
+After the window registration, the window needs to be created. Let us proceed to the function _InitInstance_.
 
 ```c
 
@@ -339,7 +339,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 ```
 
 
-This variable `hWnd`, is a handle to our main window. it is initialized by [CreateWindow](https://msdn.microsoft.com/en-us/library/windows/desktop/ms632679(v=vs.85).aspx) , which is used to create a window of a particular style at a given position. If a window parent is specified, the newly created window will become a child of the parent.
+This variable _hWnd_, is a handle to our main window. it is initialized by [CreateWindow](https://msdn.microsoft.com/en-us/library/windows/desktop/ms632679(v=vs.85).aspx) , which is used to create a window of a particular style at a given position. If a window parent is specified, the newly created window will become a child of the parent.
 
 All present parameters in [CreateWindow](https://msdn.microsoft.com/en-us/library/windows/desktop/ms632679(v=vs.85).aspx) are the same as those found in [CREATESTRUCT](https://msdn.microsoft.com/en-us/library/windows/desktop/ms632603(v=vs.85).aspx).  
 Here is a closer look at this particular structure.
@@ -365,18 +365,18 @@ typedef struct tagCREATESTRUCTA {
 
 |Name|Description|
 |:--|:--|
-|`lpCreateParams`|An argument that can be passed for further use in the `WndProc` function|
-|`hInstance`|The instance of the associated application|
-|`hMenu`|A handle to a menu|
-|`hwndParent`|A handle to a window to use as parent|
-|`cy`|The height of the window|
-|`cx`|The width of the window|
-|`x`|The left position of the window|
-|`y`|The top position of the window|
-|`style`|The style of the window|
-|`lpszName`|The name of the window (title)|
-|`lpszClass`|The window's class name. This must match `wcex.lpszClassName` in `WNDCLASSEX`|
-|`dwExStyle`|An extended window style - **Unused in this example!**|
+|_lpCreateParams_|An argument that can be passed for further use in the _WndProc_ function|
+|_hInstance_|The instance of the associated application|
+|_hMenu_|A handle to a menu|
+|_hwndParent_|A handle to a window to use as parent|
+|_cy_|The height of the window|
+|_cx_|The width of the window|
+|_x_|The left position of the window|
+|_y_|The top position of the window|
+|_style_|The style of the window|
+|_lpszName_|The name of the window (title)|
+|_lpszClass_|The window's class name. This must match _wcex.lpszClassName_ in _WNDCLASSEX_|
+|_dwExStyle_|An extended window style - **Unused in this example!**|
 
 
 #Accelerator table
@@ -391,7 +391,7 @@ hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_INTRODUCTION));
 
 I will not explain in depth resource files, as resources will be explained in further tutorials, but for a quick overview: An accelerator table is used to bind keyboard combinations to application commands.
 
-By default, **_template_** applications use automatically generated accelerator tables, but keep in mind that these are not required at all.
+By default, template applications use automatically generated accelerator tables, but keep in mind that these are not required at all.
 
 
 #The message loop
@@ -401,7 +401,7 @@ Now that the main window is created and setup, it is time to setup the main loop
 
 ![](images/message-queue.png)
 
-To begin with, the system checks if there are pending messages in the [message queue](http://en.wikipedia.org/wiki/Message_queue). If such a condition is met, then the system translates and dispatches the message to the appropriate window, which is, in this case, our main window. Each window is given a procedure. This procedure is represented by `lpfnWndProc` in the [WNDCLASSEX](https://msdn.microsoft.com/en-us/library/windows/desktop/ms633577(v=vs.85).aspx) structure. This procedure is called by with the window handle to which it is associated, the message type, and additionally, with up to two parameters, `wParam`, `lParam`. The window procedure is responsible for doing tasks, often based on the message type. If the message type is the quit message, the function will return with negative result, causing the message loop to end. If this message differs from quitting, then the system will return to the message queue to process the next message, or wait until it receives new notifications.
+To begin with, the system checks if there are pending messages in the [message queue](http://en.wikipedia.org/wiki/Message_queue). If such a condition is met, then the system translates and dispatches the message to the appropriate window, which is, in this case, our main window. Each window is given a procedure. This procedure is represented by _lpfnWndProc_ in the [WNDCLASSEX](https://msdn.microsoft.com/en-us/library/windows/desktop/ms633577(v=vs.85).aspx) structure. This procedure is called by with the window handle to which it is associated, the message type, and additionally, with up to two parameters, _wParam_, _lParam_. The window procedure is responsible for doing tasks, often based on the message type. If the message type is the quit message, the function will return with negative result, causing the message loop to end. If this message differs from quitting, then the system will return to the message queue to process the next message, or wait until it receives new notifications.
 
 
 In order to process messages continuously, we need to create a loop. This loop, called the message loop. Here is the code from [WinMain](https://msdn.microsoft.com/en-us/library/windows/desktop/ms633559(v=vs.85).aspx).
@@ -431,7 +431,7 @@ BOOL WINAPI GetMessage(
 );
 ```
 
-The `GetMessage` function is used to retrieve pending messages in the message queue, waiting for a particular event to occur, such as mouse clicks, window resizing, focus loss, etc.
+The _GetMessage_ function is used to retrieve pending messages in the message queue, waiting for a particular event to occur, such as mouse clicks, window resizing, focus loss, etc.
 
 
 ####TranslateAccelerator
@@ -466,7 +466,7 @@ LRESULT WINAPI DispatchMessage(
 );
 ```
 
-This function, [DispatchMessage](https://msdn.microsoft.com/en-us/library/windows/desktop/ms644934(v=vs.85).aspx), is used to dispatch messages to a window procedure. In this case, the window procedure is represented by attribute `lpfnWndProc` from [WNDCLASSEX](https://msdn.microsoft.com/en-us/library/windows/desktop/ms633577(v=vs.85).aspx), `WndProc`.
+This function, [DispatchMessage](https://msdn.microsoft.com/en-us/library/windows/desktop/ms644934(v=vs.85).aspx), is used to dispatch messages to a window procedure. In this case, the window procedure is represented by attribute _lpfnWndProc_ from [WNDCLASSEX](https://msdn.microsoft.com/en-us/library/windows/desktop/ms633577(v=vs.85).aspx), _WndProc_.
 
 ##The window procedure
 
@@ -489,13 +489,13 @@ LRESULT CALLBACK WindowProc(
 |lParam|A message parameter|
 
 
-The first parameter, `hwnd`, represents the current window being processed. This is represented by `hwnd` in the `InitWindow`.
+The first parameter, _hwnd_, represents the current window being processed. This is represented by _hwnd_ in the _InitWindow_.
 
-The second parameter, `message`, is a system-defined message. This is used to determine the nature of the event, .i.e: Keyboard input, mouse input, window focus acquisition/loss, etc.
+The second parameter, _message_, is a system-defined message. This is used to determine the nature of the event, .i.e: Keyboard input, mouse input, window focus acquisition/loss, etc.
 
-The remaining parameters `wParam` & `lParam` are message parameters that may contain data/values based on the current value of `message`, the message type.
+The remaining parameters _wParam_ & _lParam_ are message parameters that may contain data/values based on the current value of _message_, the message type.
 
-Now it is time to examine the definition of `WndProc`, the window procedure function.
+Now it is time to examine the definition of _WndProc_, the window procedure function.
 
 
 ```c
@@ -580,9 +580,9 @@ wmId    = LOWORD(wParam);
 wmEvent = HIWORD(wParam);
 ```
 
-Before explaining the main purpose of both [macros](http://en.wikipedia.org/wiki/Macro_%28computer_science%29), we must comprehend what `wParam` is. `wParam` is a parameter of type `WPARAM`. The type `WPARAM` is an [alias](http://en.wikipedia.org/wiki/Typedef) to a 32 bits unsigned integer. If targeting a 64 bits architecture, such as Windows x64, this will constitute an [alias](http://en.wikipedia.org/wiki/Typedef) to a 64 bits integer, which is equivalent to an `unsigned long long`, or `unsigned long long int`.
+Before explaining the main purpose of both [macros](http://en.wikipedia.org/wiki/Macro_%28computer_science%29), we must comprehend what _wParam_ is. _wParam_ is a parameter of type _WPARAM_. The type _WPARAM_ is an [alias](http://en.wikipedia.org/wiki/Typedef) to a 32 bits unsigned integer. If targeting a 64 bits architecture, such as Windows x64, this will constitute an [alias](http://en.wikipedia.org/wiki/Typedef) to a 64 bits integer, which is equivalent to an _unsigned long long_, or _unsigned long long int_.
 
-Assuming readers are familiar with binary representation, [LOWORD](https://msdn.microsoft.com/en-us/library/windows/desktop/ms632659%28v=vs.85%29.aspx) & [HIWORD](https://msdn.microsoft.com/en-us/library/windows/desktop/ms632657(v=vs.85).aspx) are [macros](http://en.wikipedia.org/wiki/Macro_%28computer_science%29) for retrieving specific bits of `wParam`. Using bitwise operators, the [LOWORD](https://msdn.microsoft.com/en-us/library/windows/desktop/ms632659%28v=vs.85%29.aspx) [macro](http://en.wikipedia.org/wiki/Macro_%28computer_science%29) can be seen as:
+Assuming readers are familiar with binary representation, [LOWORD](https://msdn.microsoft.com/en-us/library/windows/desktop/ms632659%28v=vs.85%29.aspx) & [HIWORD](https://msdn.microsoft.com/en-us/library/windows/desktop/ms632657(v=vs.85).aspx) are [macros](http://en.wikipedia.org/wiki/Macro_%28computer_science%29) for retrieving specific bits of _wParam_. Using bitwise operators, the [LOWORD](https://msdn.microsoft.com/en-us/library/windows/desktop/ms632659%28v=vs.85%29.aspx) [macro](http://en.wikipedia.org/wiki/Macro_%28computer_science%29) can be seen as:
 
 ```c
 #define LOWORD(l) ((WORD)(((DWORD_PTR)(l)) & 0xffff))
@@ -594,14 +594,14 @@ The [HIWORD](https://msdn.microsoft.com/en-us/library/windows/desktop/ms632657(v
 #define HIWORD(l) ((WORD)((((DWORD_PTR)(l)) >> 16) & 0xffff))
 ```
 
-In short, `LOWORD` simply performs [logical conjunction](http://en.wikipedia.org/wiki/Logical_conjunction) (AND) operation with value 0xffff which clears the upper 16 bits, leaving only the lower part unaffected.
+In short, _LOWORD_ simply performs [logical conjunction](http://en.wikipedia.org/wiki/Logical_conjunction) (AND) operation with value 0xffff which clears the upper 16 bits, leaving only the lower part unaffected.
 
-[HIWORD](https://msdn.microsoft.com/en-us/library/windows/desktop/ms632657(v=vs.85).aspx), itself includes one extra before `LOWORD`: to use the right shift operators `>>` to shift the upper part to the right, thus overriding the lower 16 bits, and then applying logical conjunction to clear the upper part.
+[HIWORD](https://msdn.microsoft.com/en-us/library/windows/desktop/ms632657(v=vs.85).aspx), itself includes one extra before _LOWORD_: to use the right shift operators _>>_ to shift the upper part to the right, thus overriding the lower 16 bits, and then applying logical conjunction to clear the upper part.
 
 **Note:** _We must ensure to clear the upper part again, otherwise it could result in improper values._
 
 
-Once retrieved, this value will tell us the message ID, where prefixes such as `IDM` are used as naming conventions to indicate that this represents a message ID. This leads us to an other conditional branch with two cases, `IDM_ABOUT` and `IDM_EXIT`.
+Once retrieved, this value will tell us the message ID, where prefixes such as _IDM_ are used as naming conventions to indicate that this represents a message ID. This leads us to an other conditional branch with two cases, _IDM_ABOUT_ and _IDM_EXIT_.
 
 
 ```c
@@ -623,7 +623,7 @@ case WM_COMMAND:
 
 ####IDM_ABOUT
 
-When users click the close button(X) at the top right corner, this causes the window to send a message [WM_COMMAND](https://msdn.microsoft.com/en-us/library/windows/desktop/ms647591(v=vs.85).aspx) with argument `IDM_ABOUT` passed to `wParam` as the low word (or low part), which is retrieved with [macro](http://en.wikipedia.org/wiki/Macro_%28computer_science%29) [LOWORD](https://msdn.microsoft.com/en-us/library/windows/desktop/ms632659%28v=vs.85%29.aspx). If the value corresponds to `IDM_ABOUT`, then `DialogBox` is called and initialize a [dialog](http://en.wikipedia.org/wiki/Dialog_box) that displays information about the authors of the application. I will not explain how `DialogBox` works for simplicity purposes. This will be covered in further tutorials.
+When users click the close button(X) at the top right corner, this causes the window to send a message [WM_COMMAND](https://msdn.microsoft.com/en-us/library/windows/desktop/ms647591(v=vs.85).aspx) with argument _IDM_ABOUT_ passed to _wParam_ as the low word (or low part), which is retrieved with [macro](http://en.wikipedia.org/wiki/Macro_%28computer_science%29) [LOWORD](https://msdn.microsoft.com/en-us/library/windows/desktop/ms632659%28v=vs.85%29.aspx). If the value corresponds to _IDM_ABOUT_, then _DialogBox_ is called and initialize a [dialog](http://en.wikipedia.org/wiki/Dialog_box) that displays information about the authors of the application. I will not explain how _DialogBox_ works for simplicity purposes. This will be covered in further tutorials.
 
 ```c
 case IDM_ABOUT:
@@ -634,7 +634,7 @@ case IDM_ABOUT:
 
 ####IDM_EXIT
 
-When users click the close button(X) at the top right corner, this causes the window to send a message [WM_COMMAND](https://msdn.microsoft.com/en-us/library/windows/desktop/ms647591(v=vs.85).aspx) with argument `IDM_EXIT` passed to `wParam` as the low word (or low part), which is retrieved with macro [LOWORD](https://msdn.microsoft.com/en-us/library/windows/desktop/ms632659%28v=vs.85%29.aspx). If the value corresponds to `IDM_EXIT`, then the [DestroyWindow](https://msdn.microsoft.com/en-us/library/windows/desktop/ms632682(v=vs.85).aspx) function is called, which will then send a [WM_DESTROY](https://msdn.microsoft.com/en-us/library/windows/desktop/ms632620%28v=vs.85%29.aspx) message to the window, which we will see further in this tutorial.
+When users click the close button(X) at the top right corner, this causes the window to send a message [WM_COMMAND](https://msdn.microsoft.com/en-us/library/windows/desktop/ms647591(v=vs.85).aspx) with argument _IDM_EXIT_ passed to _wParam_ as the low word (or low part), which is retrieved with macro [LOWORD](https://msdn.microsoft.com/en-us/library/windows/desktop/ms632659%28v=vs.85%29.aspx). If the value corresponds to _IDM_EXIT_, then the [DestroyWindow](https://msdn.microsoft.com/en-us/library/windows/desktop/ms632682(v=vs.85).aspx) function is called, which will then send a [WM_DESTROY](https://msdn.microsoft.com/en-us/library/windows/desktop/ms632620%28v=vs.85%29.aspx) message to the window, which we will see further in this tutorial.
 
 ```c
 case IDM_EXIT:
@@ -646,7 +646,7 @@ case IDM_EXIT:
 
 ###WM_PAINT
 
-The `WM_PAINT` identifier is used to describe the paint event. This event occurs everytime a window is redrawn. The function [BeginPaint](https://msdn.microsoft.com/en-us/library/windows/desktop/dd183362(v=vs.85).aspx) and [EndPaint](https://msdn.microsoft.com/en-us/library/windows/desktop/dd162598(v=vs.85).aspx) are used to specify both start and end of drawing process. On return, all the drawing that was done will be sent to screen.
+The _WM_PAINT_ identifier is used to describe the paint event. This event occurs everytime a window is redrawn. The function [BeginPaint](https://msdn.microsoft.com/en-us/library/windows/desktop/dd183362(v=vs.85).aspx) and [EndPaint](https://msdn.microsoft.com/en-us/library/windows/desktop/dd162598(v=vs.85).aspx) are used to specify both start and end of drawing process. On return, all the drawing that was done will be sent to screen.
 
 ```c
 case WM_PAINT:
@@ -685,7 +685,7 @@ This function simply calls the default window procedure to process all messages 
 
 #Conclusion
 
-From there, readers should be familiar with the basics of a **Win32** API. Readers should have a fair understanding from a conceptual point of view of **Win32**'s event & message processing and how the main loop is interacting with these. Readers are encouraged to read this tutorial again to ensure correct understanding, as further tutorials will cover and expand concepts viewed throughout this lecture.
+From there, readers should be familiar with the basics of a *Win32* API. Readers should have a fair understanding from a conceptual point of view of *Win32*'s event & message processing and how the main loop is interacting with these. Readers are encouraged to read this tutorial again to ensure correct understanding, as further tutorials will cover and expand concepts viewed throughout this lecture.
 
 ---
 
