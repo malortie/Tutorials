@@ -1,6 +1,7 @@
 #ifndef WIN32_LEAN_AND_MEAN
-#include <Windows.h>
+#define WIN32_LEAN_AND_MEAN
 #endif
+#include <Windows.h>
 
 //
 //
