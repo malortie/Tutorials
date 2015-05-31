@@ -1,3 +1,5 @@
+// Resources.cpp
+
 // Header required to help detect window version
 #include <sdkddkver.h>
 
@@ -41,7 +43,7 @@ WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 //
 int 
 APIENTRY 
-wWinMain(
+_tWinMain(
 	HINSTANCE hInstance, 
 	HINSTANCE hPrevInstance, 
 	LPWSTR lpCmdLine, 

@@ -573,4 +573,4 @@ wWinMain(
 
 ---
 
-[Previous](../windows-and-messages/windows-and-messages.md) | [Index](../../index.md)
+[Previous](../windows-and-messages/windows-and-messages.md) | [Index](../../index.md) | [Next](../resources/resources.md)

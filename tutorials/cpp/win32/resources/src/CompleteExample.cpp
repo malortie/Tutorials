@@ -1,3 +1,5 @@
+// CompleteExample.cpp
+
 // Header required to help detect window version
 #include <sdkddkver.h>
 
@@ -62,14 +64,7 @@ _tWinMain(
 
 	cursor		= LoadCursor(hInstance, MAKEINTRESOURCE(IDC_MYAPP_POINTER));
 	icon		= LoadIcon(hInstance, MAKEINTRESOURCE(IDI_MYAPP_ICON));
-	iconSmall	= (HICON)LoadImage( 
-		hInstance, // Handle to the module containing the embedded resource.
-		MAKEINTRESOURCE(IDI_MYAPP_ICON_SMALL),  // Small icon.
-		IMAGE_ICON,  // Specifies the image type.
-		16, // The width of the image to be loaded.
-		16, // The height of the image to be loaded.
-		0); // The 
-
+	iconSmall	= LoadIcon(hInstance, MAKEINTRESOURCE(IDI_MYAPP_ICON_SMALL));
 
 	// Setup window class attributes.
 	WNDCLASSEX wcex;
