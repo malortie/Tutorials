@@ -188,7 +188,7 @@ In Windows operating system, a resource constitutes a binary data that is embedd
 
 ##Benefits
 
-* Ability to be embedded in [EXE](http://en.wikipedia.org/wiki/.exe);[DLL](http://en.wikipedia.org/wiki/Dynamic-link_library);[MUI](multilingual user interface](http://en.wikipedia.org/wiki/Multilingual_User_Interface) files.
+* Ability to be embedded in [EXE](http://en.wikipedia.org/wiki/.exe);[DLL](http://en.wikipedia.org/wiki/Dynamic-link_library);[MUI](http://en.wikipedia.org/wiki/Multilingual_User_Interface) files.
 * Are [Read Only](http://en.wikipedia.org/wiki/Read-only_memory), which prevent against unwanted modification.
 * Ideal for [internationalization and localization](http://en.wikipedia.org/wiki/Internationalization_and_localization), as well as [multilingual user interface](http://en.wikipedia.org/wiki/Multilingual_User_Interface).
 
